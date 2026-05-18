@@ -79,7 +79,7 @@ async function handleDelete(contact) {
         <p class="text-sm opacity-90">Импортируйте контакты из телефонной книги, чтобы начать отслеживать дни рождения.</p>
         <div class="card-actions mt-2">
           <button class="btn btn-accent" @click="showImport = true">Импортировать контакты</button>
-          <button class="btn btn-ghost btn-outline btn-sm" @click="router.push('/add')">Добавить вручную</button>
+          <button class="btn btn-ghost btn-outline" @click="router.push('/add')">Добавить вручную</button>
         </div>
       </div>
     </div>

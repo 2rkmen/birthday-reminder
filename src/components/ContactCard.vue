@@ -17,9 +17,7 @@ const hasBirthday = computed(() => !!props.contact.birthday)
 const daysLabel = computed(() => {
   if (daysUntil.value === null) return ''
   if (daysUntil.value === 0) return '🎉 Сегодня!'
-  if (daysUntil.value === 1) return 'Остался 1 день'
-  if (daysUntil.value <= 7) return `Осталось ${daysUntil.value} дней`
-  return `Через ${daysUntil.value} дней`
+  return `Осталось ${daysUntil.value} ${getDaysWord(daysUntil.value)}`
 })
 
 const isUpcoming = computed(() => {
@@ -37,6 +35,12 @@ function getAgeWord(years) {
   if (years % 10 >= 2 && years % 10 <= 4 && (years % 100 < 10 || years % 100 >= 20)) return 'года'
   return 'лет'
 }
+
+function getDaysWord(days) {
+  if (days % 10 === 1 && days % 100 !== 11) return 'день'
+  if (days % 10 >= 2 && days % 10 <= 4 && (days % 100 < 10 || days % 100 >= 20)) return 'дня'
+  return 'дней'
+}
 </script>
 
 <template>
@@ -49,7 +53,7 @@ function getAgeWord(years) {
       <div class="flex items-center justify-between gap-3">
         <div class="flex items-center gap-3 min-w-0">
           <div class="avatar placeholder">
-            <div class="w-10 h-10 rounded-full bg-primary text-primary-content text-lg font-bold"
+            <div class="w-10 h-10 rounded-full bg-primary text-primary-content font-bold flex items-center justify-center"
               :class="{ 'bg-accent': isToday, 'bg-warning text-warning-content': isUpcoming && !isToday }">
               <span>{{ contact.name.charAt(0).toUpperCase() }}</span>
             </div>
