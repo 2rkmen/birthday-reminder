@@ -16,10 +16,13 @@ export function daysUntilBirthday(birthday) {
   if (!birthday) return null
   const parts = birthday.split('-')
   const today = new Date()
+  today.setHours(0, 0, 0, 0)
   const currentYear = today.getFullYear()
   let nextBirthday = new Date(currentYear, parseInt(parts[1]) - 1, parseInt(parts[2]))
+  nextBirthday.setHours(0, 0, 0, 0)
   if (nextBirthday < today) {
     nextBirthday = new Date(currentYear + 1, parseInt(parts[1]) - 1, parseInt(parts[2]))
+    nextBirthday.setHours(0, 0, 0, 0)
   }
   const diffTime = nextBirthday - today
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24))

@@ -127,7 +127,7 @@ async function deleteAllContacts() {
 </script>
 
 <template>
-  <div class="p-4 space-y-4 max-w-2xl mx-auto">
+  <div class="p-4 space-y-4 max-w-2xl mx-auto pb-24 md:pb-8">
     <div class="card bg-base-100 shadow-sm border border-base-200">
       <div class="card-body p-5">
         <h2 class="card-title text-lg">🔔 Уведомления</h2>

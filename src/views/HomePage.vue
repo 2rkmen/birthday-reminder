@@ -72,7 +72,7 @@ async function handleDelete(contact) {
 </script>
 
 <template>
-  <div class="p-4 space-y-4 max-w-2xl mx-auto">
+  <div class="p-4 space-y-4 max-w-2xl mx-auto pb-24 md:pb-8">
     <div v-if="!settingsStore.contactsImported && !showImport" class="card bg-primary text-primary-content shadow-lg">
       <div class="card-body p-5">
         <h2 class="card-title">👋 Добро пожаловать!</h2>

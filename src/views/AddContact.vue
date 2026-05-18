@@ -73,7 +73,7 @@ async function save() {
 </script>
 
 <template>
-  <div class="p-4 max-w-lg mx-auto">
+  <div class="p-4 max-w-lg mx-auto pb-24 md:pb-8">
     <div class="card bg-base-100 shadow-sm border border-base-200">
       <div class="card-body p-5">
         <h1 class="card-title text-xl mb-2">
