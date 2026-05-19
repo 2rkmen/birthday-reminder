@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/birthday-reminder/' : '/',
   plugins: [
     vue(),
     tailwindcss(),
@@ -19,7 +20,7 @@ export default defineConfig({
         display: 'standalone',
         orientation: 'portrait',
         lang: 'ru',
-        start_url: '/',
+        start_url: process.env.GITHUB_ACTIONS ? '/birthday-reminder/' : '/',
         icons: [
           {
             src: 'icons/icon-192x192.png',
