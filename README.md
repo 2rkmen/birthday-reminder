@@ -13,7 +13,7 @@ Offline-first PWA приложение на Vue 3 + Tailwind CSS + DaisyUI дл�
 - **📴 Offline-first** — все данные хранятся локально в IndexedDB, статика кэшируется Service Worker
 
 ## Технологии
-
+ 
 | | |
 |---|---|
 | Фреймворк | Vue 3 (Composition API) |
