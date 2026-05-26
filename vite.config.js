@@ -3,13 +3,17 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
+const base = process.env.GITHUB_ACTIONS ? '/birthday-reminder/' : '/'
+
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/birthday-reminder/' : '/',
+  base,
   plugins: [
     vue(),
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      scope: base,
+      start_url: base,
       includeAssets: ['icons/*.svg', 'icons/*.png'],
       manifest: {
         name: 'Напоминания о днях рождения',
@@ -20,20 +24,20 @@ export default defineConfig({
         display: 'standalone',
         orientation: 'portrait',
         lang: 'ru',
-        start_url: process.env.GITHUB_ACTIONS ? '/birthday-reminder/' : '/',
+        start_url: base,
         icons: [
           {
-            src: 'icons/icon-192x192.png',
+            src: `${base}icons/icon-192x192.png`,
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-512x512.png',
+            src: `${base}icons/icon-512x512.png`,
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-512x512.png',
+            src: `${base}icons/icon-512x512.png`,
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
